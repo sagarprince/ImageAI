@@ -390,7 +390,7 @@ class ClassificationModelTrainer:
         print("Number of experiments (Epochs) : ", self.__num_epochs)
 
         
-        model.fit_generator(train_generator, steps_per_epoch=int(num_train / batch_size), epochs=self.__num_epochs,
+        model.fit(train_generator, steps_per_epoch=int(num_train / batch_size), epochs=self.__num_epochs,
                             validation_data=test_generator,
                             validation_steps=int(num_test / batch_size), callbacks=[checkpoint, lr_scheduler])
 
